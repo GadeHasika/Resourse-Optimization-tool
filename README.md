@@ -1,40 +1,73 @@
-Managing IT resources efficiently is a major challenge for organizations. Over-provisioning leads to wasted costs, while under-provisioning can cause downtime and performance degradation.
-This project is an AI-driven dashboard that provides:
+🚀 Overview
+Managing IT resources efficiently is a critical challenge for organizations.
+Over-provisioning leads to wasted costs, while under-provisioning can cause downtime and performance issues.
 
-Real-time monitoring of CPU & memory usage
-24-hour forecasting using ARIMA
-Automated scaling recommendations (scale up/down)
-Cost analysis in USD & INR
-The solution empowers IT teams to make data-driven decisions for capacity planning and cost optimization.
-Key Features
-1. Real-Time Data Collection
-Collects live CPU & memory usage using psutil.
+This project delivers an AI-driven web application that helps:
 
-Flexible collection interval & duration (set via the sidebar).
+Monitor real-time CPU & memory usage
 
-2. Historical Data Storage
-Saves usage data to cpu_data.csv for long-term tracking.
+Forecast future demand (24h) using ARIMA
 
-3. Interactive Visualizations
+Recommend scaling actions (add/remove servers)
+
+Provide cost insights in USD & INR
+
+✨ Key Features
+1. Real-Time Monitoring
+
+Live collection of CPU & memory usage with customizable intervals.
+
+Stores data in cpu_data.csv for historical analysis.
+
+2. Interactive Visualizations
 Two separate Plotly charts:
+
 CPU Usage (with thresholds)
+
 Memory Usage (with thresholds)
-Aggregated to 1-minute intervals for clean visualization.
 
-4. AI-Powered Forecasting
-Uses pmdarima.auto_arima to automatically select the best ARIMA model.
-Predicts CPU & memory usage for the next 24 hours.
+Aggregated to 1-minute intervals for better readability.
 
-5. Intelligent Scaling Recommendations
-Compares predicted peak usage with user-defined thresholds.
+3. AI-Powered Forecasting
+pmdarima.auto_arima automatically selects the best ARIMA model.
 
-Recommends:
-Scale Up (add servers if demand is high)
-Scale Down (remove servers if under-utilized)
-Estimates costs/savings in USD & INR.
+Forecasts CPU & memory usage for the next 24 hours.
 
-Tech Stack
+4. Smart Scaling Recommendations
+Compares predicted peaks with user-defined thresholds.
+
+Suggests Scale Up/Down actions.
+
+Estimates costs & savings in USD & INR.
+
+🛠️ Tech Stack
 Python: pandas, numpy, psutil, pmdarima, plotly
-Streamlit: Interactive web dashboard
-ARIMA (pmdarima): For time-series forecasting
-CSV Storage: Persistent data logging 
+
+Streamlit: For the interactive dashboard
+
+ARIMA: For time-series forecasting
+
+CSV: For persistent data storage
+
+📂 How It Works
+
+Live Data Collection
+
+Captures CPU & memory usage periodically using psutil.
+
+Data Storage
+
+Saves readings into cpu_data.csv.
+
+Forecasting
+
+Uses ARIMA to forecast demand for next 24 hours.
+
+Scaling Decision
+
+Compares predicted peaks with thresholds.
+
+Calculates servers to add/remove.
+
+Shows cost impact in USD & INR.
+
